@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "340881242102",
+    "project_id": "smartapp-a6880",
+    "storage_bucket": "smartapp-a6880.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340881242102:android:e614d32fbea49f66a4f9d7",
+        "android_client_info": {
+          "package_name": "com.example.fruit_classifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340881242102-e60t2l1l2401kbcsikm8ccpe1nb3c1ss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxxy6gzF-nP2hEAwP81T-yoRYQbgg0jCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340881242102-e60t2l1l2401kbcsikm8ccpe1nb3c1ss.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "340881242102-h2c1s8moqvi1e8kjc88uubrjmd8l62ul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fruitClassifier"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

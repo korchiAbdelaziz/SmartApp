@@ -1,0 +1,30 @@
+name: fruit_classifier
+description: Application de classification de fruits développée par Kori Abdelaziz utilisant l'intelligence artificielle
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.1.1
+  image: ^4.1.7       
+  cupertino_icons: ^1.0.8
+  tflite_flutter: ^0.8.0  # Version plus stable
+  firebase_core: ^4.2.1
+  firebase_auth: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.jpg
+    - assets/model/model.tflite
+    - assets/model/labels.txt
