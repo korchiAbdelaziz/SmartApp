@@ -5,6 +5,7 @@ import 'firebase_options.dart'; // 🔥 obligatoire pour Web
 import 'screens/home_page.dart';
 import 'screens/login_page.dart';
 import 'screens/register_page.dart';
+import 'screens/classifier_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
         '/home': (context) => HomePage(),
+        '/classifier': (context) => ClassifierPage(),
       },
     );
   }

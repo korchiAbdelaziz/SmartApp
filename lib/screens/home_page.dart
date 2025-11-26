@@ -29,14 +29,12 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage('assets/images/usa.jpg'), 
+                    backgroundImage: AssetImage('assets/images/logo.jpg'),
                   ),
-                  
                   Text(
                     'Korchi Abdelaziz',
                     style: TextStyle(
                       color: Colors.white,
-                      
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -54,8 +52,8 @@ class _HomePageState extends State<HomePage> {
               leading: const Icon(Icons.home),
               title: const Text('Fruit Classification'),
               onTap: () {
-                // Navigate to Home Page
                 Navigator.pop(context);
+                Navigator.pushNamed(context, '/classifier');
               },
             ),
             ListTile(

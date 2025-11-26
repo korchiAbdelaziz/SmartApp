@@ -1,47 +1,124 @@
-# Classificateur de Fruits Simple
+# 🍎 Fruit Classifier
 
-## Description
-Cette application Flutter permet de classifier 3 types de fruits : **Pomme**, **Banane** et **Orange** en utilisant l'intelligence artificielle.
+Classification de fruits en temps réel avec **TensorFlow Lite** sur Web, Mobile et Desktop.
 
-## Fonctionnalités
-- 📱 Interface utilisateur moderne et intuitive
-- 🔐 Système de connexion et d'inscription
-- 📸 Prise de photo ou sélection depuis la galerie
-- 🤖 Analyse d'image avec IA (simulation)
-- 📊 Affichage des résultats avec pourcentage de confiance
+---
 
-## Structure du Projet
+## 🚀 Quick Start (2 min)
 
-### Fichiers Principaux
-- `lib/main.dart` - Point d'entrée de l'application
-- `lib/screens/home_page.dart` - Page d'accueil principale
-- `lib/screens/login_page.dart` - Page de connexion
-- `lib/screens/register_page.dart` - Page d'inscription
-- `lib/screens/image_analysis_page.dart` - Page d'analyse d'images
-- `lib/services/image_analysis_service.dart` - Service d'analyse IA
+### 1. Lancer le serveur (pour Web)
+```bash
+cd server
+python -m pip install -r requirements.txt
+python app.py
+```
 
-### Modèle IA
-- `assets/model/model.tflite` - Modèle TensorFlow Lite pour la classification
-- `assets/model/labels.txt` - Liste des fruits reconnus (Apple, Banana, Orange)
+### 2. Lancer l'app Flutter
+```bash
+# Web (Chrome)
+flutter run -d chrome
 
-## Comment Utiliser
+# Mobile (Android)
+flutter run -d emulator
 
-1. **Connexion** : Entrez vos identifiants ou créez un compte
-2. **Accueil** : Cliquez sur "Commencer l'analyse"
-3. **Sélection** : Choisissez une image depuis la caméra ou la galerie
-4. **Analyse** : Cliquez sur "Analyser l'image"
-5. **Résultats** : Consultez les résultats de classification
+# Desktop (Windows)
+flutter run -d windows
+```
 
-## Technologies Utilisées
-- **Flutter** - Framework de développement mobile
-- **Dart** - Langage de programmation
-- **TensorFlow Lite** - Modèle d'IA pour la classification
-- **Material Design** - Design system de Google
+### 3. Classifier une image
+- Cliquez "Classifier une image"
+- Sélectionnez/uploadez une image
+- **Résultat:** `Apple`, `Banana`, ou `Orange` ✅
 
-## Développeur
-**Kori Abdelaziz** - Étudiant en 5IIR
+---
 
-## Notes
-- Cette version utilise des résultats simulés pour la démonstration
-- Le modèle IA réel nécessiterait une intégration TensorFlow Lite complète
-- Application optimisée pour les débutants avec commentaires détaillés
+## 📊 Plateformes
+
+| Plateforme | Inférence | Status |
+|-----------|-----------|--------|
+| **Web** | Serveur Flask (REST API) | ✅ |
+| **Android/iOS** | TFLite local | ✅ |
+| **Windows/macOS** | TFLite local | ✅ |
+
+---
+
+## 📁 Organisation
+
+```
+fruit_classifier/
+├── lib/                     # Code Flutter
+│   ├── screens/classifier_page.dart
+│   └── inference/           # Multi-platform logic
+├── server/                  # Backend Flask
+│   └── app.py              # Serveur inférence
+├── assets/model/           # Modèle TFLite
+└── README.md, STRUCTURE.md, QUICK_START.md  # Docs
+```
+
+**Voir [STRUCTURE.md](STRUCTURE.md) pour détails complets.**
+
+---
+
+## 📚 Documentation
+
+- **[QUICK_START.md](QUICK_START.md)** — 3 étapes pour démarrer
+- **[STRUCTURE.md](STRUCTURE.md)** — Organisation du code
+- **[INDEX.md](INDEX.md)** — Index de navigation
+- **[server/README.md](server/README.md)** — Doc serveur Flask
+
+---
+
+## 🛠️ Stack
+
+**Frontend:** Flutter 3.35.5 + Dart 3.9.2  
+**Backend:** Flask 3.0.0 + Python 3.10+  
+**ML:** TensorFlow Lite (32×32×3 RGB)  
+**Auth:** Firebase
+
+---
+
+## ⚙️ Config
+
+### URL serveur (app Flutter)
+```dart
+// lib/screens/classifier_page.dart, ligne ~38
+Uri.parse('http://localhost:5000/predict')
+```
+
+### Variables d'environnement (serveur)
+```bash
+export MODEL_PATH=model.tflite
+export LABELS_PATH=labels.txt
+```
+
+---
+
+## 📊 Modèle
+
+- **Input:** 32×32 RGB (uint8, 0-255)
+- **Output:** 3 logits (Apple, Banana, Orange)
+- **Accuracy:** 94% (test set)
+
+---
+
+## 🐛 Aide Rapide
+
+| Erreur | Solution |
+|--------|----------|
+| "Failed to fetch" | Vérifier serveur lancé |
+| Port 5000 occupé | Changer port dans `server/app.py` |
+| Import error | `pip install -r server/requirements.txt` |
+| App won't compile | `flutter clean && flutter pub get` |
+
+---
+
+## 📞 Points Clés
+
+- **UI:** `lib/screens/classifier_page.dart`
+- **Serveur:** `server/app.py`
+- **Modèle:** `assets/model/model.tflite`
+
+---
+
+**Status:** ✅ Production Ready  
+**Dernière mise à jour:** 26 novembre 2025

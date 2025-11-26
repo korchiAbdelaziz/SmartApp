@@ -1,3 +1,0 @@
--- flutterfire --version    : verification
--- $env:Path += ";C:\Users\Korchi Abdelaziz\AppData\Local\Pub\Cache\bin"  (pour que flutterfire soit reconut dans votre cmd )
--- flutterfire configure    : pour choisir et lié votre projet firebase  
